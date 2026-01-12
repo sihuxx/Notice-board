@@ -31,6 +31,7 @@
         <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
       </div>
       <button type="submit">회원가입</button>
+      <a href="./login.php">계정이 이미 있으신가요?</a>
     </form>
   </main>
   

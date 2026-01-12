@@ -6,4 +6,4 @@ $idx = $_GET["idx"];
 
 DB::exec("delete from post where idx = '$idx'");
 
-move("./board.php");
+move("./board.php?sort=desc");

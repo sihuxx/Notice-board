@@ -11,7 +11,7 @@
       <?php require_once 'header.php'; ?>
     <main class="index-box">
       <img src="./images/Notice-logo.png" alt="">
-      <a href="./board.php">글 쓰러 가기</a>
+      <a href="./board.php?sort=desc">글 쓰러 가기</a>
     </main>
     <?php require_once 'footer.php'; ?>
   </div>

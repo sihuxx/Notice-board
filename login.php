@@ -23,6 +23,7 @@
         <input type="password" id="psw" name="psw" placeholder="비밀번호를 입력해주세요" required>
       </div>
       <button type="submit">로그인</button>
+      <a href="./reg.php">계정이 없으신가요?</a>
     </form>
   </main>
 </body>

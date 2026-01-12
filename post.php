@@ -3,7 +3,7 @@ require_once './lib.php';
 require_once './db.php';
 
 $idx = $_GET["idx"];
-$user = $_SESSION["ss"];
+$user = $_SESSION["ss"] ?? false;
 $post = DB::fetch("select * from post where idx = '$idx'");
 
 DB::exec("update post set view = view + 1 where idx = '$idx'");
@@ -28,14 +28,19 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
           <p><?= $post->date ?></p>
           <p>조회수: <?= $post->view ?></p>
         </div>
+        <?php if($user) { ?>
         <?php if ($post->writer_id == $user->id) { ?>
           <div>
             <a href="./editPost.php?idx=<?=$idx?>">수정</a>
             <a href="./deletePostAction.php?idx=<?=$idx?>">삭제</a>
           </div>
-          <?php } else {?>
+          <?php } else { ?>
             <div>
-              <a href="#">프로필 보기</a>
+              <a href="./userInfo.php?id=<?=$post->writer_id?>">프로필 보기</a>
+            </div> 
+            <?php }} else {?>
+              <div>
+              <a href="./userInfo.php?id=<?=$post->writer_id?>">프로필 보기</a>
             </div>
             <?php } ?>
       </div>
@@ -46,7 +51,6 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
       </div>
     </div>
   </main>
-  <?php require_once './footer.php' ?>
   
 </body>
 </html>

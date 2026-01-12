@@ -8,32 +8,32 @@
 </head>
 <body>
   <div class="body-container">
-      <?php
-      require_once './lib.php';
+    <?php
+          require_once './lib.php';
       require_once './header.php';
-      ?>
-    <main class="board-box">
-      <h1>자유 게시판</h1>
-    <div class="btn-box">
-        <button class="desc-btn" onclick="location.href='./board.php?sort=desc'">최신순</button>
-      <button class="asc-btn" onclick="location.href='./board.php?sort=asc'">오래된순</button>
-    </div>
-      <?php
+    ?>
+      <main class="board-box">
+        <h1>인기 게시판</h1>
+        <div class="btn-box">
+          <button class="desc-btn" onclick="location.href='./hotBoard.php?sort=desc'">조회수 많은 순</button>
+          <button class="asc-btn" onclick="location.href='./hotBoard.php?sort=asc'">조회수 적은 순</button>
+        </div>
+        <?php
         $sort = $_GET["sort"] ?? 'desc';
-        $posts = DB::fetchAll("select * from post order by date $sort");
-        
+        $posts = DB::fetchAll("select * from post order by view $sort limit 10");
+        $user = $_SESSION["ss"] ?? false;
       ?>
       <table class="board">
         <thead>
           <th>제목</th>
           <th>내용</th>
-          <th>작성자</th>
+          <th>닉네임</th>
           <th>날짜</th>
           <th>조회수</th>
         </thead>
         <tbody>
         <?php foreach($posts as $p) { ?>
-        <tr onclick="location.href = './post.php?idx=<?= $p->idx?>'" style="cursor:pointer;">
+        <tr>
           <td><?= $p->title ?></td>
           <td><?= $p->detail ?></td>
           <td><?= $p->writer ?></td>
@@ -41,11 +41,11 @@
           <td><?= $p->view ?></td>
         </tr>
         <?php } ?>
-      </tbody>
-     </table>
+        </tbody>
+      </table>
     </main>
-      <button class="post-btn" onclick="checkUser()">글쓰기</button>
-      <?php require_once 'footer.php'; ?>
+       <button class="post-btn" onclick="checkUser()">글쓰기</button>
+    <?php require_once 'footer.php'; ?>
   </div>
 </body>
 <script>
@@ -57,8 +57,7 @@
     alert("로그인 후 이용해주세요")
   }
   }
-
-  function checkSort() {
+    function checkSort() {
     const isDesc = <?php echo ($sort == 'desc') ? 'true' : 'false' ?>;
     const descBtn = document.querySelector(".desc-btn");
     const ascBtn = document.querySelector(".asc-btn");
@@ -74,4 +73,4 @@
 
   checkSort();
 </script>
-</html>
+</html> 

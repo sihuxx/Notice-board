@@ -17,7 +17,7 @@ if ($type == 'reg') {
   } else {
     [$salt, $h_psw] = hashPsw($psw);
     DB::exec("insert into user(id, psw, salt, name, email) values ('$id', '$h_psw', '$salt', '$name', '$email')");
-    alert("회원가입 성공!");
+    alert("회원가입 성공");
     move('./login.php');
   }
 } else {
