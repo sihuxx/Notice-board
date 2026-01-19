@@ -148,10 +148,11 @@ header {
     padding: 100px;
   }
   
+  
   & .btn-box {
-    width: 1200px;
-    display: flex;
-    justify-content: end;
+      width: 1200px;
+      display: flex;
+      justify-content: end;
     gap: 15px;
     margin-bottom: 15px;
 
@@ -164,9 +165,9 @@ header {
       border: 1px solid black;
       cursor: pointer;
     }
+  }
 
   }
-}
 
 .select {
   background-color: black !important;
@@ -186,6 +187,7 @@ header {
       color: white;
     }
   }
+
 
   & tbody {
     text-align: center;
@@ -548,4 +550,9 @@ footer {
       font-size: 15px;
     }
   }
+}
+
+.no-comment {
+  margin-top: 30px;
+  color: #8d8d8d;  
 }

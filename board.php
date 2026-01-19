@@ -21,7 +21,6 @@
       <?php
         $sort = $_GET["sort"] ?? 'desc';
         $posts = DB::fetchAll("select * from post order by date $sort");
-        
       ?>
       <table class="board">
         <thead>

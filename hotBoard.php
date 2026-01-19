@@ -33,7 +33,7 @@
         </thead>
         <tbody>
         <?php foreach($posts as $p) { ?>
-        <tr>
+        <tr  onclick="location.href = './post.php?idx=<?= $p->idx?>'" style="cursor:pointer;">
           <td><?= $p->title ?></td>
           <td><?= $p->detail ?></td>
           <td><?= $p->writer ?></td>

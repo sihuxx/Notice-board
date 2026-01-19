@@ -59,22 +59,25 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
         <button>댓글 달기</button>
       </form>
       <div class="comment-box">
-        
-        <?php foreach($comments as $comment) { ?>
-          <div class="comment">
-           <div class="comment-content">
-             <h4><?= $comment->writer?></h4>
-            <p><?= $comment->content?></p>
-            <p class="comment-date"><?= $comment->date?></p>
-           </div>
-            <?php if($user->idx == $comment->writer_idx) { ?>
-            <div>
-              <a href="./editComment.php?idx=<?=$comment->idx?>" class="edit-btn">수정</a>
-              <a href="./deleteCommentAction.php?idx=<?=$comment->idx?>" class="edit-btn">삭제</a>
+        <?php if (count($comments) > 0) { ?>
+          <?php foreach($comments as $comment) { ?>
+            <div class="comment">
+             <div class="comment-content">
+               <h4><?= $comment->writer?></h4>
+              <p><?= $comment->content?></p>
+              <p class="comment-date"><?= $comment->date?></p>
+             </div>
+              <?php if($user->idx == $comment->writer_idx) { ?>
+              <div>
+                <a href="./editComment.php?idx=<?=$comment->idx?>" class="edit-btn">수정</a>
+                <a href="./deleteCommentAction.php?idx=<?=$comment->idx?>" class="edit-btn">삭제</a>
+              </div>
+              <?php } ?>
             </div>
-            <?php } ?>
-          </div>
-          <hr>
+            <hr>
+          <?php } 
+        } else { ?>
+          <p class="no-comment">아직 댓글이 없습니다...</p>
         <?php } ?>
       </div>
     </div>
