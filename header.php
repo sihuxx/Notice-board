@@ -17,6 +17,9 @@
           <li>
             <a href="./hotBoard.php?sort=desc">인기 게시판</a>            
           </li>
+          <li>
+            <a href="./search.php">검색</a>
+          </li>
         </ul>
       </nav>
 <?php if (!$user) { ?>
