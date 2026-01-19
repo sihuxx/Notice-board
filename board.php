@@ -26,7 +26,6 @@
         <thead>
           <th>유형</th>
           <th>제목</th>
-          <th>내용</th>
           <th>작성자</th>
           <th>날짜</th>
           <th>조회수</th>
@@ -36,7 +35,6 @@
         <tr onclick="location.href = './post.php?idx=<?= $p->idx?>'" style="cursor:pointer;">
           <td><?= $p->cate ?></td>
           <td><?= $p->title ?></td>
-          <td><?= $p->detail ?></td>
           <td><?= $p->writer ?></td>
           <td><?= $p->date ?></td>
           <td><?= $p->view ?></td>

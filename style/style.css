@@ -416,7 +416,7 @@ footer {
 
   & input {
     font-size: 30px;
-
+width: 1000px;
   }
   & input[type="file"] {
     font-size: 16px;
@@ -573,7 +573,7 @@ footer {
 }
 
 .search-box {
-  margin-top: 30px;
+  margin-top: 100px;
   padding: 30px 0;
   display: flex;
   align-items: center;
@@ -606,7 +606,28 @@ footer {
   font-size: 18px;
   color: #727272;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 30px;
   cursor: pointer;
+}
+
+/* 좋아요 */
+
+.like-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  & button {
+    padding: 5px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  & button.select {
+    background-color: black !important;
+    color: white !important;
+  }
 }

@@ -25,7 +25,7 @@
         <select name="category">
           <option value="일반">일반</option>
           <option value="유머">유머</option>
-          <option value="정보">정보</option>
+          <option value="투표">투표</option>
         </select>
       </div>
       <div>

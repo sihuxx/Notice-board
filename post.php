@@ -52,6 +52,16 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
         <img src="<?= $post->img ?>" alt="">
         <p><?= $post->detail ?></p>
       </div>
+      <form action="./likeAction.php?idx=<?=$post->idx?>" method="post" class="like-box">
+
+        <?php if(db::fetch("select * from likes where post_idx = '$post->idx' and user_idx = '$user->idx'")) { ?>
+          <button class="select">좋아요</button>
+        <?php } else { ?>
+          <button>좋아요</button>
+        <?php } ?>
+
+        <span><?= $post->like_count?></span>
+      </form>
       <h3>댓글 <?= count($comments)?></h3>
       <form action="./addCommentAction.php" method="post" class="comment-input">
         <input type="hidden" name="postIdx" value="<?= $post->idx?>">

@@ -8,7 +8,7 @@ $detail = $_POST["detail"];
 $category = $_POST["category"];
 
 $file = $_FILES["file"];
-$desPath = './images/file' . $file["name"];
+$desPath = './images/file/' . $file["name"];
 
 if (!empty($file['name'])) {
   if (move_uploaded_file($file["tmp_name"], $desPath)) {

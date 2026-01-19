@@ -26,7 +26,6 @@
       <table class="board">
         <thead>
           <th>제목</th>
-          <th>내용</th>
           <th>닉네임</th>
           <th>날짜</th>
           <th>조회수</th>
@@ -35,7 +34,6 @@
         <?php foreach($posts as $p) { ?>
         <tr  onclick="location.href = './post.php?idx=<?= $p->idx?>'" style="cursor:pointer;">
           <td><?= $p->title ?></td>
-          <td><?= $p->detail ?></td>
           <td><?= $p->writer ?></td>
           <td><?= $p->date ?></td>
           <td><?= $p->view ?></td>
