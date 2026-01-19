@@ -7,8 +7,7 @@ $title = $_POST["title"];
 $detail = $_POST["detail"];
 
 $file = $_FILES["file"];
-$path = "./images/file";
-$desPath = $path . "/" . $file["name"];
+$desPath = './images/file' . $file["name"];
 
 if (!empty($file['name'])) {
   if (move_uploaded_file($file["tmp_name"], $desPath)) {

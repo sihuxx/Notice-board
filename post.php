@@ -18,7 +18,10 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
     <link rel="stylesheet" href="./style/style.css">
   </head>
   <body>
-  <?php require_once './header.php' ?>
+  <?php 
+  require_once './header.php';
+  $comments = DB::fetchAll("select * from comment where post_idx = '$post->idx'");
+  ?>
   <main class="post-view-box">
     <div>
       <h1><?= $post->title ?></h1>
@@ -48,6 +51,28 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
       <div class="post-content">
         <img src="<?= $post->img ?>" alt="">
         <p><?= $post->detail ?></p>
+      </div>
+      <h3>댓글 <?= count($comments)?></h3>
+      <form action="./addCommentAction.php" method="post" class="comment-input">
+        <input type="hidden" name="postIdx" value="<?= $post->idx?>">
+        <input type="text" placeholder="댓글을 남겨주세요" name="content">
+        <button>댓글 달기</button>
+      </form>
+      <div class="comment-box">
+        
+        <?php foreach($comments as $comment) { ?>
+          <div class="comment">
+           <div class="comment-content">
+             <h4><?= $comment->writer?></h4>
+            <p><?= $comment->content?></p>
+            <p class="comment-date"><?= $comment->date?></p>
+           </div>
+            <?php if($user->idx == $comment->writer_idx) { ?>
+              <a href="./editComment.php?idx=<?=$comment->idx?>" class="edit-btn">수정하기</a>
+            <?php } ?>
+          </div>
+          <hr>
+        <?php } ?>
       </div>
     </div>
   </main>
