@@ -68,7 +68,10 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
             <p class="comment-date"><?= $comment->date?></p>
            </div>
             <?php if($user->idx == $comment->writer_idx) { ?>
-              <a href="./editComment.php?idx=<?=$comment->idx?>" class="edit-btn">수정하기</a>
+            <div>
+              <a href="./editComment.php?idx=<?=$comment->idx?>" class="edit-btn">수정</a>
+              <a href="./deleteCommentAction.php?idx=<?=$comment->idx?>" class="edit-btn">삭제</a>
+            </div>
             <?php } ?>
           </div>
           <hr>

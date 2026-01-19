@@ -400,6 +400,10 @@ footer {
     margin-bottom: 40px;
   }
 
+  & select {
+    padding: 5px;
+  }
+
   & input, textarea {
     border: 0;
     outline: unset;

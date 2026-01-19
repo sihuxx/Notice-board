@@ -22,6 +22,13 @@
         <input type="file" id="file" name="file" placeholder="파일">
       </div>
       <div>
+        <select name="category">
+          <option value="일반">일반</option>
+          <option value="유머">유머</option>
+          <option value="정보">정보</option>
+        </select>
+      </div>
+      <div>
         <textarea name="detail" placeholder="내용을 입력해주세요." required></textarea>
       </div>
       <button type="submit">글 쓰기</button>

@@ -25,6 +25,7 @@
       ?>
       <table class="board">
         <thead>
+          <th>유형</th>
           <th>제목</th>
           <th>내용</th>
           <th>작성자</th>
@@ -34,6 +35,7 @@
         <tbody>
         <?php foreach($posts as $p) { ?>
         <tr onclick="location.href = './post.php?idx=<?= $p->idx?>'" style="cursor:pointer;">
+          <td><?= $p->cate ?></td>
           <td><?= $p->title ?></td>
           <td><?= $p->detail ?></td>
           <td><?= $p->writer ?></td>
