@@ -15,7 +15,7 @@
             <a href="./board.php?sort=desc">자유게시판</a>            
           </li>
           <li>
-            <a href="./hotBoard.php?sort=desc">인기 게시판</a>            
+            <a href="./hotBoard.php?sort=view">인기 게시판</a>            
           </li>
           <li>
             <a href="./search.php">검색</a>

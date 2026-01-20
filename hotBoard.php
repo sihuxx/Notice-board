@@ -15,12 +15,12 @@
       <main class="board-box">
         <h1>인기 게시판</h1>
         <div class="btn-box">
-          <button class="desc-btn" onclick="location.href='./hotBoard.php?sort=desc'">조회수 많은 순</button>
-          <button class="asc-btn" onclick="location.href='./hotBoard.php?sort=asc'">조회수 적은 순</button>
+          <button class="desc-btn" onclick="location.href='./hotBoard.php?sort=view'">조회수 순</button>
+          <button class="asc-btn" onclick="location.href='./hotBoard.php?sort=like_count'">좋아요 순</button>
         </div>
         <?php
-        $sort = $_GET["sort"] ?? 'desc';
-        $posts = DB::fetchAll("select * from post order by view $sort limit 10");
+        $sort = $_GET["sort"] ?? 'view';
+        $posts = DB::fetchAll("select * from post order by $sort desc limit 10");
         $user = $_SESSION["ss"] ?? false;
       ?>
       <table class="board">
@@ -60,7 +60,7 @@
   }
   }
     function checkSort() {
-    const isDesc = <?php echo ($sort == 'desc') ? 'true' : 'false' ?>;
+    const isDesc = <?php echo ($sort == 'view') ? 'true' : 'false' ?>;
     const descBtn = document.querySelector(".desc-btn");
     const ascBtn = document.querySelector(".asc-btn");
 
