@@ -25,18 +25,22 @@
       ?>
       <table class="board">
         <thead>
+          <th>유형</th>
           <th>제목</th>
           <th>닉네임</th>
           <th>날짜</th>
           <th>조회수</th>
+          <th>좋아요</th>
         </thead>
         <tbody>
         <?php foreach($posts as $p) { ?>
         <tr  onclick="location.href = './post.php?idx=<?= $p->idx?>'" style="cursor:pointer;">
+          <td><?= $p->cate ?></td>
           <td><?= $p->title ?></td>
           <td><?= $p->writer ?></td>
           <td><?= $p->date ?></td>
           <td><?= $p->view ?></td>
+          <td><?= $p->like_count ?></td>
         </tr>
         <?php } ?>
         </tbody>

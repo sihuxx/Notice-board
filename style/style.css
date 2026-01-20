@@ -218,6 +218,7 @@ header {
   padding: 15px;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 /* 푸터 */
@@ -391,6 +392,14 @@ footer {
 
   & form {
     width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+  }
+
+  & hr {
+    width: 1000px;
   }
 
   & img {
@@ -403,7 +412,7 @@ footer {
   }
 
   & select {
-    padding: 5px;
+    padding: 7.5px;
   }
 
   & input, textarea {
@@ -437,6 +446,7 @@ width: 1000px;
     border-radius: 10px;
     border: 0;
     font-size: 17px;
+    cursor: pointer;
   }
 }
 
@@ -506,11 +516,13 @@ width: 1000px;
   gap: 10px;
 
   & input {
-    width: 300px;
-    padding: 5px;
+    width: 500px;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 5px;
   }
   & button {
-    padding: 5px;
+    padding: 10px;
     background-color: black;
     color: white;
     border-radius: 5px;
@@ -597,6 +609,7 @@ width: 1000px;
     outline: unset;
     border: 0;
     font-size: 20px;
+    cursor: pointer;
   }
 }
 
@@ -624,10 +637,102 @@ width: 1000px;
     border: 1px solid;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
   }
 
   & button.select {
     background-color: black !important;
     color: white !important;
+  }
+
+  & span {
+    font-size: 18px;
+  }
+}
+
+/* 투표 */
+
+.section {
+  & textarea {
+    height: 150px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  & .vote-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  & .vote-input {
+    font-size: 20px;
+    border-bottom: 1px solid #8d8d8d;
+    width: 500px;
+    padding: 10px;
+  }
+}
+
+.vote-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+
+  & span {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 80px;
+    display: flex;
+    gap: 15px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 7.5px;
+    transition: .3s;
+    
+    & label {
+      padding: 20px;
+      color: #333;
+      font-size: 19px;
+    }
+
+    & input {
+      margin-left: 20px;
+    }
+  }
+
+  & span.vote {
+    border: 1px solid black;
+    background-color: white;
+
+    & label {
+      color: black;
+    }
+  }
+
+  & button {
+    padding: 10px;
+    background-color: black;
+    border: 0;
+    color: white;
+    outline: unset;
+    font-size: 19px;
+    border-radius: 7.5px;
+    cursor: pointer;
+  }
+}
+
+.voted-content {
+  & span {
+    position: relative;
+
+    & > label {
+      white-space: nowrap;
+    }
+
+    & > span {
+      background-color: rgb(179, 179, 179);
+    }
   }
 }

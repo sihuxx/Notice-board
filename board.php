@@ -29,6 +29,7 @@
           <th>작성자</th>
           <th>날짜</th>
           <th>조회수</th>
+          <th>좋아요</th>
         </thead>
         <tbody>
         <?php foreach($posts as $p) { ?>
@@ -38,6 +39,7 @@
           <td><?= $p->writer ?></td>
           <td><?= $p->date ?></td>
           <td><?= $p->view ?></td>
+          <td><?= $p->like_count ?></td>
         </tr>
         <?php } ?>
       </tbody>
