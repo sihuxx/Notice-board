@@ -58,8 +58,8 @@ DB::exec("update post set view = view + 1 where idx = '$idx'");
           $total = $vote->count1 + $vote->count2;
 
           if ($total > 0) {
-            $result1 = round($vote->count1 / $total) * 100;
-            $result2 = round($vote->count2 / $total) * 100;
+            $result1 = round(($vote->count1 / $total) * 100);
+            $result2 = round(($vote->count2 / $total) * 100);
           } else {
             $result1 = 0;
             $result2 = 0;
