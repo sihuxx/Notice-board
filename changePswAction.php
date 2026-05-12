@@ -16,3 +16,5 @@ if ($newPsw == $checkPsw) {
   move('./myInfo.php');
 }
 
+alert("비밀번호 변경 실패");
+move('./myInfo.php');

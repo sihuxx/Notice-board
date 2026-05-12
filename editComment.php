@@ -16,9 +16,7 @@
     <form action="./editCommentAction.php" method="post" enctype="multipart/form-data">
       <h3>댓글 수정</h3>
       <input type="hidden" name="idx" value="<?=$idx?>">
-        <textarea name="content" placeholder="내용을 입력해주세요." required>
-          <?=$comment->content?>
-        </textarea>
+        <textarea name="content" placeholder="내용을 입력해주세요." required><?=$comment->content?></textarea>
       </div>
       <button type="submit">글 수정</button>
     </form>
